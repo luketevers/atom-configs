@@ -1,0 +1,248 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'*':
+  'Disable combak snippet':
+    'prefix': 'combak'
+    'disabled': true
+
+  'Disable import snippet':
+    'prefix': 'import'
+    'disabled': true
+
+  'Disable log snippet':
+    'prefix': 'log'
+    'disabled': true
+
+  'Disable todo snippet':
+    'prefix': 'todo'
+    'disabled': true
+
+  'Disable todo snippet':
+    'prefix': 'con'
+    'disabled': true
+
+'.source.js':
+  "Import Page":
+    "prefix": "page import"
+    "body": """
+      const Page = () => import('components/pages/${1:}')
+    """
+
+  "Page Object":
+    "prefix": "page object"
+    "body": """
+      {
+        path: '/${1:}',
+        name: '${2:}',
+        navigation: ${3:},
+        component: ${4:}
+      }
+    """
+
+'.source.pug':
+  'router-link':
+    "prefix": "router-link"
+    "body": """
+      router-link${1:}(:to="")
+    """
+
+  "v-html":
+    "prefix": "v-html"
+    "body": """
+      v-html='${1:}'
+    """
+
+  "Component Content":
+    "prefix": "content"
+    "body": """
+      :content='${1:}'
+    """
+
+  "dyno class":
+    "prefix": "dcl"
+    "body": """
+      :class="{ '${1:}':  }"
+    """
+
+  "dyno style":
+    "prefix": "dst"
+    "body": """
+      :style="{ ${1:}: '' }"
+    """
+
+  "dyno loop":
+    "prefix": "dlp"
+    "body": """
+      v-for='(${1:}, i) in content', :key='"-" + i'
+    """
+
+'.source.sass':
+  '@mixin':
+    'prefix': 'mixin'
+    'body': '@mixin ${1:name} ()'
+
+  '@media':
+    'prefix': 'media'
+    'body': '@media screen and (max-width: ${1})'
+
+'.source.vue':
+  'component nav':
+    'prefix': 'comp-nav'
+    'body': """
+        <template lang="pug" src="./navigation-${1}.pug"></template>
+
+        <script>
+        export default {
+          computed: {
+            links () {
+              return this.$router.options.routes.filter(link => link.navigation)
+            },
+            content () {
+              return this.$store.state.app.navigation
+            }
+          }
+        }
+        </script>
+      """
+
+  'component footer':
+    'prefix': 'comp-footer'
+    'body': """
+        <template lang="pug" src="./footer-${1}.pug"></template>
+
+        <script>
+        export default {
+            content () {
+              return this.$store.state.app.footer
+            }
+          }
+        }
+        </script>
+      """
+
+  'component page':
+    'prefix': 'comp-page'
+    'body': """
+        <template lang="pug" src="./${1}.pug"></template>
+
+        <script>
+        export default {
+          computed: {
+            content () {
+              return this.$store.state.pages${2}
+            }
+          },
+          components: {
+          }
+        }
+        </script>
+      """
+
+  'component':
+    'prefix': 'component'
+    'body': """
+        <template lang="pug" src="./${1}.pug"></template>
+
+        <script>
+        export default {
+          props: {
+            content: {
+              type: [Object, Array]
+            }
+          }
+        }
+        </script>
+      """
+
+  'import custom':
+    'prefix': 'import-cust'
+    'body': """
+        import Custom${2} from 'components/custom/custom-${1}/custom-${1}'
+      """
+
+  'import block':
+    'prefix': 'import-block'
+    'body': """
+        import Block${2} from 'components/block/block-${1}/block-${1}'
+      """
+
+  'import form':
+    'prefix': 'import-form'
+    'body': """
+        import Form${2} from 'components/form/form-${1}/form-${1}'
+      """
+
+  'import nav':
+    'prefix': 'import-nav'
+    'body': """
+        import TheNavigation${2} from 'components/the-nav/${1}/${1}'
+      """
+
+  'data function':
+    'prefix': 'data-func'
+    'body': """
+        data () {
+          ${1}: ${2}
+        }
+      """
+
+  'methods object':
+    'prefix': 'meth-object'
+    'body': """
+        methods: {
+          ${1} () {
+            ${2}
+          }
+        },
+      """
+
+  'component object':
+    'prefix': 'comp-object'
+    'body': """
+        components: {
+          ${1}
+        },
+      """
+
+  'data function':
+    'prefix': 'data-func'
+    'body': """
+        data () {
+          ${1}: ${2}
+        },
+      """
+
+  'function':
+    'prefix': 'create-function'
+    'body': """
+        ${1} (${2}) {
+          ${3}
+        },
+      """
+
+  'interval':
+    'prefix': 'interval'
+    'body': """
+        setInterval(() => {
+          ${1}
+        }, ${2})
+      """

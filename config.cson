@@ -1,0 +1,28 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "d357c3d5-d96f-4683-bcea-e2f38de6c5a3"
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "ariake-black-syntax"
+    ]
+  editor:
+    fontSize: 12
+    invisibles: {}
+  "exception-reporting":
+    userId: "7498447d-54ed-4879-9575-19eca43851a5"
+  "git-diff":
+    showIconsInEditorGutter: true
+  hyperclick:
+    darwinTriggerKeys: "altKey,metaKey"
+    linuxTriggerKeys: "altKey,metaKey"
+    win32TriggerKeys: "shiftKey,metaKey"
+  "linter-ui-default": {}
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+".sass.source":
+  editor:
+    softWrap: false
